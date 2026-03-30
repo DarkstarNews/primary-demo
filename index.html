@@ -18,8 +18,8 @@
 }
 body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;background:var(--bg);color:var(--t1);overflow:hidden;height:100dvh;width:100vw;-webkit-font-smoothing:antialiased}
 .app{width:100%;max-width:430px;height:100dvh;margin:0 auto;display:flex;flex-direction:column;position:relative;overflow:hidden}
-.screen{display:none;flex-direction:column;flex:1;overflow:hidden;position:absolute;top:0;left:0;right:0;bottom:0}
-.screen.active{display:flex}
+.screen{display:none;flex-direction:column;flex:1;overflow:hidden;position:absolute;top:0;left:0;right:0;bottom:0;z-index:1}
+.screen.active{display:flex;z-index:2}
 
 /* Tab Bar */
 .tab-bar{position:fixed;bottom:28px;left:50%;transform:translateX(-50%);display:flex;gap:0;padding:4px 6px;background:var(--card);border-radius:100px;border:0.5px solid rgba(255,255,255,0.06);box-shadow:0 4px 8px rgba(0,0,0,0.15);z-index:100}
@@ -128,7 +128,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;backgroun
 .reveal-continue{width:100%;height:52px;border:none;border-radius:12px;background:var(--t1);color:var(--bg);font-family:inherit;font-size:16px;font-weight:600;cursor:pointer;margin-top:auto;flex-shrink:0;display:flex;align-items:center;justify-content:center;gap:8px}
 
 /* PROFILE TAB */
-.profile-screen{padding:16px 24px 90px;overflow-y:auto}
+.profile-screen.active{padding:16px 24px 90px;overflow-y:auto}
 .profile-header{display:flex;justify-content:space-between;align-items:center}
 .radar-container{width:100%;aspect-ratio:1;max-height:42vh;position:relative}
 .radar-container canvas{width:100%;height:100%}
@@ -153,7 +153,7 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;backgroun
 .level-remaining{font-size:13px;color:var(--t2);margin-top:4px}
 
 /* REPS TAB */
-.reps-screen{padding-bottom:90px;overflow-y:auto}
+.reps-screen.active{padding-bottom:90px;overflow-y:auto}
 .reps-segments{display:flex;gap:4px;padding:3px;background:var(--card);border-radius:12px;margin:16px 24px 0}
 .seg-btn{flex:1;padding:8px;border:none;background:none;font-family:inherit;font-size:13px;font-weight:500;color:var(--t3);cursor:pointer;border-radius:8px;transition:all 0.3s}
 .seg-btn.active{background:var(--card-el);color:var(--t1);font-weight:600}
@@ -183,14 +183,14 @@ body{font-family:-apple-system,BlinkMacSystemFont,system-ui,sans-serif;backgroun
 .align-fill{height:100%;border-radius:3px;transition:width 0.5s}
 
 /* CALIBRATE TAB */
-.calibrate-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px 90px;text-align:center;gap:24px}
+.calibrate-screen.active{flex-direction:column;align-items:center;justify-content:center;padding:40px 32px 90px;text-align:center;gap:24px}
 .cal-icon{width:88px;height:88px;border-radius:50%;background:rgba(106,175,230,0.06);display:flex;align-items:center;justify-content:center;font-size:36px;color:rgba(106,175,230,0.7)}
 
 /* LOCAL TAB */
-.local-screen{display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 32px 90px;text-align:center;gap:16px}
+.local-screen.active{flex-direction:column;align-items:center;justify-content:center;padding:40px 32px 90px;text-align:center;gap:16px}
 
 /* SETTINGS TAB */
-.settings-screen{padding:56px 24px 90px;overflow-y:auto}
+.settings-screen.active{padding:56px 24px 90px;overflow-y:auto}
 .settings-group{margin-top:24px}
 .settings-group-label{font-size:10px;font-weight:600;letter-spacing:2px;color:var(--t3);text-transform:uppercase;margin-bottom:8px}
 .settings-item{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;background:var(--card);border-radius:12px;margin-bottom:2px}
